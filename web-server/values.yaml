@@ -1,0 +1,30 @@
+# web-server
+hpa:
+  maxReplicas: 8
+  minReplicas: 2
+  cpuUtil: 70
+
+image:
+  deployedAt: _
+  repository: _
+  tag: _
+  pullPolicy: Never
+resources:
+  limits:
+    cpu: 200m
+    memory: 200Mi
+  requests:
+    cpu: 100m
+    memory: 100Mi
+probe:
+  path: /
+  initialDelaySeconds: 30
+  timeoutSeconds: 1
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30080
+
+config:
+  checksum: _
